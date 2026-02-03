@@ -6,7 +6,7 @@ import { addItemToCart  } from './CartSlice';
 const ProductList = () => {
     const dispatch = useDispatch();
     const cartItems = useSelector(state => state.cart.cartItems)
-
+ 
     const products = [
         { id: 1, name: 'Product A', price: 60 },
         { id: 2, name: 'Product B', price: 75 },
@@ -27,7 +27,7 @@ const ProductList = () => {
                 <button className={`add-to-cart-btn ${cartItems.some(item => item.id === product.id) ? 'disabled' : ''}`} 
                         onClick={() => handleAddToCart(product)}
                         disabled={cartItems.some(item => item.id===product.id)}>
-                   {cartItems.some(item => item.id === product.id) ? 'Added' : 'Add to cart'} Add to cart
+                   {cartItems.some(item => item.id === product.id) ? 'Added' : 'Add to cart'} 
                     </button>
             </li>
         ))}
